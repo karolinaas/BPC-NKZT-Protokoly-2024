@@ -1,0 +1,100 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Compile Latex and Publish to Pages
+
+on:
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build_latex_and_deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: latex
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Compile LaTeX documents
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            Uloha1/Uloha1.tex
+            Uloha2/Uloha2.tex
+            Uloha3/Uloha3.tex
+            Uloha4/Uloha4.tex
+            Uloha5/Uloha5.tex
+            Uloha6/Uloha6.tex
+            Uloha7/Uloha7.tex
+            Uloha8/Uloha8.tex
+            Uloha9/Uloha9.tex
+            Uloha10/Uloha10.tex
+          latexmk_use_xelatex: true
+          latexmk_shell_escape: true
+          work_in_root_file_dir: true
+          continue_on_error: true
+      - name: Generate redirect page
+        run: |
+          mkdir public
+          mv Uloha1/Uloha1.pdf ./public/
+          mv Uloha2/Uloha2.pdf ./public/
+          mv Uloha3/Uloha3.pdf ./public/
+          mv Uloha4/Uloha4.pdf ./public/
+          mv Uloha5/Uloha5.pdf ./public/
+          mv Uloha6/Uloha6.pdf ./public/
+          mv Uloha7/Uloha7.pdf ./public/
+          mv Uloha8/Uloha8.pdf ./public/
+          mv Uloha9/Uloha9.pdf ./public/
+          mv Uloha10/Uloha10.pdf ./public/
+          cat > ./public/index.html <<EOL
+          <!doctype html>
+          <html>
+            <head>
+              <title>Rozcestník</title>
+            </head>
+            <body>
+              <p><a href="./Uloha1.pdf">Úloha č.1: Efekt Fuzz Face – simulace a měření</a></p>
+              <p><a href="./Uloha2.pdf">Úloha č.2: Kompresor dynamiky</a></p>
+              <p><a href="./Uloha3.pdf">Úloha č.3: Elektronkový zesilovač – simulace</a></p>
+              <p><a href="./Uloha4.pdf">Úloha č.4: Efekt Chorus</a></p>
+              <p><a href="./Uloha5.pdf">Úloha č.5: Mikrofonní předzesilovač M-AUDIO DMP3</a></p>
+              <p><a href="./Uloha6.pdf">Úloha č.6: Mikrofonní zesilovač KH013</a></p>
+              <p><a href="./Uloha7.pdf">Úloha č.7: Stereo předzesilovač s RIAA charakteristikou PS1-MGSX</a></p>
+              <p><a href="./Uloha8.pdf">Úloha č.8: Indikátor úrovně s 10 LED AMJ3915SX</a></p>
+              <p><a href="./Uloha9.pdf">Úloha č.9: Monofonní korekční zesilovač RMD3212SX</a></p>
+              <p><a href="./Uloha10.pdf">Úloha č.10: Integrovaný koncový zesilovač 20 W KMJ2005SX</a></p>
+            </body>
+          </html>
+          EOL
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3.0.1
+        with:
+          path: ./public
+
+
+  deploy:
+    needs: build_latex_and_deploy
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # or the latest "vX.X.X" version tag for this action
