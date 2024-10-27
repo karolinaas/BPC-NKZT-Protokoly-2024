@@ -2,7 +2,7 @@
 
 \title{Úloha č.3: Elektronkový zesilovač - Simulace}
 \author{Karolína Andrea Šebestová}
-\date{Datum měření: 22.10.2024}
+\date{Datum měření: 21.10.2024}
 
 \usepackage[czech]{babel}
 \usepackage{indentfirst}
@@ -11,6 +11,8 @@
 \usepackage[margin=1.5cm]{geometry}
 \usepackage{booktabs}
 \usepackage{amsmath}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \begin{document}
 
@@ -37,11 +39,146 @@
 
 \section{Zpracování úkolů}
 
-\subsection{Tabulky}
+\subsection{Úkol měření 1)}
 
-\subsection{Výpočty}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{charakteristiky/ULOHA1.pdf}
+    \caption{asdafsdf}
+\end{figure}
 
-\subsection{Grafy}
+\subsection{Úkol měření 2)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{charakteristiky/uloha2.pdf}
+    \caption{asdafsdf}
+\end{figure}
+
+\subsection{Úkol měření 3)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{charakteristiky/uloha3.pdf}
+    \caption{asdafsdf}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{charakteristiky/uloha3_Rs_5krat_vetsi_340k.pdf}
+        \caption{sadfasdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{charakteristiky/uloha3_Rs_5krat_mensi_13_6k.pdf}
+        \caption{sadfasdf}
+    \end{subfigure}
+    \caption{asdfasd}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{charakteristiky/uloha3_Ck_5krat_vetsi_5u.pdf}
+        \caption{sadfasdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{charakteristiky/uloha3_Ck_5krat_mensi_0_2u.pdf}
+        \caption{sadfasdf}
+    \end{subfigure}
+    \caption{asdfasd}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{charakteristiky/uloha3_Cin_5krat_vetsi_500n.pdf}
+        \caption{sadfasdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{charakteristiky/uloha3_Cin_5krat_mensi_20n.pdf}
+        \caption{sadfasdf}
+    \end{subfigure}
+    \caption{asdfasd}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{charakteristiky/uloha3_Cout_5krat_vetsi_500n.pdf}
+        \caption{sadfasdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{charakteristiky/uloha3_Cout_5krat_mensi_20n.pdf}
+        \caption{sadfasdf}
+    \end{subfigure}
+    \caption{asdfasd}
+\end{figure}
+
+\subsection{Úkol měření 4)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{charakteristiky/uloha4.pdf}
+    \caption{asdafsdf}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{charakteristiky/uloha4_2v.pdf}
+    \caption{asdafsdf}
+\end{figure}
+
+\subsection{Úkol měření 5)}
+
+\begin{table}[H]
+    \catcode`\-=12
+    \centering
+    \caption{saldkjfbjka}
+    \begin{tabular}{ccc}
+        \toprule
+        $n$       & $f$         & $U_n$      \\
+        \cmidrule(rl){1-3}
+        [-]       & [kHz]       & [V]        \\
+        \midrule
+        1         & 1,5         & 91,00      \\
+        2         & 3,0         & 1,047      \\
+        3         & 4,5         & 11,07      \\
+        4         & 6,0         & 2,828      \\
+        5         & 7,5         & 0,369      \\
+        6         & 9,0         & 1,040      \\
+        7         & 10,5        & 1,065      \\
+        8         & 12,0        & 0,389      \\
+        9         & 13,5        & 0,250      \\
+        10        & 15,0        & 0,411      \\
+        11        & 16,5        & 0,275      \\
+        12        & 18,0        & 0,121      \\
+        13        & 19,5        & 0,168      \\
+        14        & 21,0        & 0,166      \\
+        15        & 22,5        & 0,112      \\
+        16        & 24,0        & 0,074      \\
+        17        & 25,5        & 0,100      \\
+        18        & 27,0        & 0,088      \\
+        19        & 28,5        & 0,048      \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{equation*}
+    THD = \sqrt{\frac{U_2^2 + U_3^2 + ... + U_{20}^2}{U_1^2 + U_2^2 + ... + U_{20}^2}} \cdot 100 \% = \underline{\underline{12,64\ \%}}
+\end{equation*}
 
 \section{Závěr}
 

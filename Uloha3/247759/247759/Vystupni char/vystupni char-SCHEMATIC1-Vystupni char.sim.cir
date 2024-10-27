@@ -1,0 +1,19 @@
+** Profile: "SCHEMATIC1-Vystupni char"  [ D:\student\247759\Vystupni char\vystupni char-schematic1-vystupni char.sim ] 
+
+** Creating circuit file "vystupni char-schematic1-vystupni char.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini file:
+.lib "C:\Program Files\Orcad\PSpice\UserLib\Tube_IM.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V_V2 0 250 10 
+.STEP LIN V_V1 -3 0 0.2 
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+.INC ".\vystupni char-SCHEMATIC1.net" 
+
+
+.END

@@ -1,0 +1,12 @@
+* source ZESILOVAC AC CHAR
+V_V1         N00478 0 DC 0Vdc AC 1Vac 
+V_V2         N00958 0 250Vdc
+C_Cin         N00478 N00513  100n  
+C_Cout         N00600 N00690  20n  
+C_Ck         0 N00717  1u  
+R_Rs         N00513 N00571  68k  
+R_Rg         0 N00513  1meg  
+X_VL1         N00600 N00571 N00717 12AX7
+R_Rk         0 N00717  1.5k  
+R_Ra         N00600 N00958  100k  
+R_Rout         0 N00690  1meg  

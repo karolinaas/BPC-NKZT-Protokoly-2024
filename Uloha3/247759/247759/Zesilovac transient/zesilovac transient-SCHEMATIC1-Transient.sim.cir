@@ -1,0 +1,18 @@
+** Profile: "SCHEMATIC1-Transient"  [ D:\student\247759\Zesilovac transient\zesilovac transient-schematic1-transient.sim ] 
+
+** Creating circuit file "zesilovac transient-schematic1-transient.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini file:
+.lib "C:\Program Files\Orcad\PSpice\UserLib\Tube_IM.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 5m 1m 1u 
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+.INC ".\zesilovac transient-SCHEMATIC1.net" 
+
+
+.END

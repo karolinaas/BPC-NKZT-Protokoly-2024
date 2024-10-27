@@ -1,0 +1,4 @@
+* source VYSTUPNI CHAR
+V_V1         N00133 0 -10Vdc
+V_V2         N00162 0 150Vdc
+X_VL2         N00162 N00133 0 12AX7

@@ -1,0 +1,13 @@
+* source ZESILOVAC TRANSIENT
+V_V2         N00958 0 250Vdc
+V_V1         N00478 0  
++SIN 0 2 1.5k 0 0 0
+C_Cin         N00478 N00513  100n  
+C_Cout         N00600 N00690  100n  
+C_Ck         0 N00717  1u  
+R_R1         N00513 N00571  68k  
+R_Rg         0 N00513  1meg  
+R_Rk         0 N00717  1k5  
+X_VL1         N00600 N00571 N00717 12AX7
+R_Ra         N00600 N00958  100k  
+R_R5         0 N00690  1meg  

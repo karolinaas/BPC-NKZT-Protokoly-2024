@@ -1,0 +1,4 @@
+* source PREVODNI CHAR
+V_V1         N00133 0 -3Vdc
+V_V2         N00162 0 150Vdc
+X_VL1         N00162 N00133 0 12AX7
