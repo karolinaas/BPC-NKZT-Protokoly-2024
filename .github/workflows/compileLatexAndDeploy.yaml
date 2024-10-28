@@ -42,7 +42,7 @@ jobs:
             Uloha8/Uloha8.tex
             Uloha9/Uloha9.tex
             Uloha10/Uloha10.tex
-          latexmk_use_xelatex: true
+          latexmk_use_xelatex: false
           latexmk_shell_escape: true
           work_in_root_file_dir: true
           continue_on_error: true
