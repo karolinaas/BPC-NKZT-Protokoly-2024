@@ -42,8 +42,10 @@ for LED in LED_n:
     color = plt.plot(f_mer_n, U_vst, label= "LED " + str(int(LED)), marker="x", markersize="10", markeredgewidth=2)
     plt.text(150, U_vst[1], "LED " + str(int(LED)), ha="center", va="bottom", color=plt.gca().lines[-1].get_color())
 
+plt.yscale("log")
 plt.xscale("log")
 plt.xticks(f_mer_n, labels=f_mer)
+plt.yticks(np.arange(1, 11, 1), labels=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"])
 plt.grid(True, which="both")
 plt.xlabel("$f_{vst}$")
 plt.ylabel("$U_{měř}$ [V]")

@@ -62,13 +62,19 @@ U tohoto modulu je také možno volit buď paralelní nebo sériové zapojení L
     \item Laboratorní napájecí zdroj Agilent E3620A
     \item Laboratorní digitální osciloskop Agilent DSO-X 2002A
     \item Laboratorní signálový generátor
+    \item Obvodový analyzátor Bode 100
 \end{itemize}
 
 \section{Zpracování úkolů}
 
 \subsection{Měření závislosti rozsvícení jednotlivých LED na vstupním napětí (Úkol 2)}
 
+V tomto úkolu jsme se věnovali měření hodnot vstupních sinusových napětí, které odpovídají rozsvícení jednotlivých LED.
+Toto měření bylo provedeno pro pět různých přibližně rovnoměrně logaritmicky rozložených kmitočtů v kmitočtovém pásmu 20\,Hz až 20\,kHz.
+
 \subsubsection{Tabulky}
+
+V následující tabulce jsou uvedeny všechny naměřená hodnoty vstupních harmonických napětí, při kterých se rozsvítili jednotlivé LED na měřeném přípravku.
 
 \begin{table}[H]
     \catcode`\-=12
@@ -96,35 +102,60 @@ U tohoto modulu je také možno volit buď paralelní nebo sériové zapojení L
 
 \subsubsection{Grafy}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{grafy/graf1.pdf}
-    \caption{Závislost rozsvícení jednotlivých LED na vstupním napětí}
-\end{figure}
+Následující graf vyobrazuje závislost naměřených vstupních harmonických napětí na počtu rozsvícených LED indikátoru.
+Je zde možné zřetelně pozorovat logaritmický průběh napěťové závislosti, který je vhodný pro indikaci úrovně signálu.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{grafy/graf2.pdf}
+    \includegraphics[width=0.7\textwidth]{grafy/graf1.pdf}
+    \caption{Závislost rozsvícení jednotlivých LED na vstupním napětí}
+\end{figure}
+
+Na následující grafické závislosti jsou vyneseny naměřené hodnoty vstupního harmonického napětí pro rozsvícení jednotlivých LED v závislosti na frekvenci vstupního signálu.
+Na obou osách grafu bylo použito logaritmické měřítko, což má za následek rovnoměrné rozložení naměřených hodnot.
+V ideálním případě by všechny vyobrazené křivky měly být vodorovné.
+Pozorujeme však, že se tak neděje.
+K odchylkám může docházet z různých důvodů - zejména v systematických chybách provedeného měření a konstrukčních nedokonalostí přípravku, které mají za následek nepřesnou frekvenční závislost.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{grafy/graf2.pdf}
     \caption{Závislost napětí rozsvícení jednotlivých LED na frekvenci vstupního signálu}
 \end{figure}
 
 \subsection{Měření frekvenční charakteristiky modulu a fáze vstupní impedance (Úkol 3)}
 
+V tomto úkolu jsme provedli měření frekvenčních charakteristik modulu a fáze vstupní impedance přípravku na kmitočtovém rozsahu 20\,Hz až 20\,kHz.
+Měření bylo provedeno pomocí obvodového analyzátoru Bode 100 při dvou různých hodnotách amplitudy měřícího signálu.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{impedance_uloha8.png}
+    \includegraphics[width=0.85\textwidth]{impedance_uloha8.png}
     \caption{Frekvenční charakteristiky modulu a fáze vstupní impedance při amplitudě výstupní úrovně -3\,dBm}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{impedance_13dbm_uloha8.png}
+    \includegraphics[width=0.85\textwidth]{impedance_13dbm_uloha8.png}
     \caption{Frekvenční charakteristiky modulu a fáze vstupní impedance při amplitudě výstupní úrovně 13\,dBm}
 \end{figure}
 
+Na výše uvedených naměřených charakteristikách pozorujeme, že velikost vstupního napětí má na naměřený modul vstupní impedance minimální vliv.
+Patrný je však vliv na měřený průběh fáze vstupní impedance, kde charakteristika dosahuje nižších hodnot na jejím počátku.
+
+Pozorujeme také, že první charakteristika při nižší amplitudě výstupní úrovně je značně postižena vysokým šumem.
+Druhá charakteristika při vyšší výstupní úrovni je šumem ovlivněna výrazně méně.
+Tento jev je způsoben tím, že použitý analyzátor Bode 100 používá k měření svou vnitřní impedanci o velikosti 50\,$\Omega$.
+Při prvním měření tedy dochází k měření velice malých hodnot, které jsou do značné míry ovlivněny šumem.
+Během druhého měření již dochází k měření vyšších hodnot napětí, na které šum nemá až takový vliv.
+
 \subsection{Měření vlivu výchylky indikátoru na proudový odběr z napájecího zdroje (Úkol 4)}
 
+V této úloze jsme realizovali měření vlivu výchylky indikátoru na proudový odběr přípravku z napájecího zdroje.
+
 \subsubsection{Tabulky}
+
+Všechny naměřené hodnoty jsou uvedeny v následující tabulce.
 
 \begin{table}[H]
     \catcode`\-=12
@@ -141,15 +172,34 @@ U tohoto modulu je také možno volit buď paralelní nebo sériové zapojení L
 
 \subsubsection{Grafy}
 
+Výše uvedené naměřené hodnoty byly vyneseny do níže uvedeného grafu.
+V ideálním případě by tato charakteristika měla být lineární.
+Pozorujeme však, že charakteristika není dokonale lineární.
+
+Největší vliv na tento jev je pravděpodobně způsoben systematickou chybou v provedeném měření.
+Měření bylo totiž provedeno pomocí ampérmetru vestavěného v napájecím zdroji, který k tomuto účelu není vhodný a poskytuje spíše jen orientační hodnoty.
+
+Další méně výrazný vliv má také to, že indikátor využívá LED diody různých barev (zelená, žlutá a červená).
+Diody různých barev mají různé konstrukční vlastnosti a nebudou tedy mít dokonale stejný proudový odběr.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{grafy/graf3.pdf}
     \caption{Závislost velikosti proudového odběru na počtu rozsvícených LED}
 \end{figure}
 
+\pagebreak
+
 \subsection{Měření rychlosti odezvy měřiče (Úkol 5)}
 
+V následujícím měření jsme se věnovali rychlosti odezvy indikátoru přivedením obdélníkového signálu o kmitočtu 1\,kHz.
+Amplituda signálu byla volena tak, aby svítily všechny LED indikátoru.
+
 \subsubsection{Tabulky}
+
+V následující tabulce jsou uvedeny naměřené hodnoty hodnoty doby, za jakou zhasne jedna LED (délka jednoho "schodu"), doba zhasnutí všech LED (doba všech schodů) a doba rozsvícení LED (sestupná hrana signálu).
+
+Níže je také vyobrazen průběh signálu na osciloskopu.
 
 \begin{table}[H]
     \centering
@@ -165,10 +215,31 @@ U tohoto modulu je také možno volit buď paralelní nebo sériové zapojení L
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{osciloskop_uloha8.png}
+    \includegraphics[width=0.8\textwidth]{osciloskop_uloha8.png}
     \caption{Snímek obrazovky osciloskopu během měření zobrazující časový průběh napětí na LED}
 \end{figure}
 
 \section{Závěr}
+
+V této úloze jsme se věnovali měření vlastností stavebnicového modulu indikátoru úrovně AMJ3915SX.
+Nejprve bylo potřeba určit maximální vstupní napětí (napětí pro plnou výchylku indikátoru) pro kmitočty ve slyšitelném.
+V následujících úkolech bylo potřeba dbát na to, abychom během měření tyto hodnoty nepřesáhli.
+
+V úkolu č.2 jsme se věnovali měření hodnot vstupních harmonických napětí, které odpovídají rozsvícení jednotlivých LED na indikátoru.
+Toto měření bylo provedeno pro pět různých přibližně rovnoměrně logaritmicky rozložených kmitočtů v kmitočtovém pásmu 20\,Hz až 20\,kHz.
+Hodnoty byly vyneseny do dvou grafických závislostí.
+Na první pozorujeme logaritmický průběh napěťové závislosti.
+Díky tomu je indikátor vhodný pro indikaci úrovně signálu.
+Na následující charakteristice pozorujeme nedokonalosti ve frekvenční závislosti, kterou by v ideálním případě měly tvořit dokonale vodorovné čáry.
+
+Úkol č.3 byl věnován měření frekvenčních charakteristik modulu a fáze vstupní impedance přípravku pomocí analyzátoru Bode 100.
+Pozorujeme vliv změny amplitudy měřícího signálu na výsledné charakteristiky.
+Pozorován byl také vysoký šum, který byl způsoben měřením velmi nízkých napěťových hodnot pomocí vnitřní impedance analyzátoru.
+
+Následně jsme se věnovali vlivu výchylky indikátoru na jeho proudový odběr.
+Pozorována byla pomĚrně nedokonalá lineární závislost.
+Chyby v linearitě byly způsobeny zejména nepřesností použitého vestavěného ampérmetru zdroje.
+
+Nakonec jsme prozkoumali také rychlost odezvy indikátoru a určili jsme doby zhasnutí jedné LED, všech LED a dobu jejich rozsvícení.
 
 \end{document}
