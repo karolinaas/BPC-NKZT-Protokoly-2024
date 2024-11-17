@@ -1,7 +1,7 @@
 \documentclass[a4paper, czech]{article}
 
 \title{Úloha č.8: Indikátor úrovně s 10 LED AMJ3915SX}
-\author{Karolína Andrea Šebestová \and Jan božejovský}
+\author{Karolína Šebestová \and Jan Božejovský}
 \date{Datum měření: 12.11.2024}
 
 \usepackage[czech]{babel}
@@ -12,8 +12,8 @@
 \usepackage{booktabs}
 \usepackage{amsmath}
 \usepackage{multirow}
-% \usepackage{caption}
-% \usepackage{subcaption}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \begin{document}
 
@@ -73,7 +73,7 @@ U tohoto modulu je také možno volit buď paralelní nebo sériové zapojení L
 \begin{table}[H]
     \catcode`\-=12
     \centering
-    \caption{aaaa}
+    \caption{Hodnoty vstupních sinusových napětí odpovídající rozsvícení jednotlivých LED}
     \begin{tabular}{cccccc}
         \toprule
         \multirow{2}{*}{LED} & \multicolumn{5}{c}{$U_{\text{vst}}$ [V]} \\
@@ -101,20 +101,75 @@ U tohoto modulu je také možno volit buď paralelní nebo sériové zapojení L
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{grafy/graf1.pdf}
-    \caption{sadfas}
+    \caption{Závislost rozsvícení jednotlivých LED na vstupním napětí}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{grafy/graf2.pdf}
-    \caption{sadfas}
+    \caption{Závislost napětí rozsvícení jednotlivých LED na frekvenci vstupního signálu}
 \end{figure}
 
-\subsection{Tabulky}
+\subsection{Měření frekvenční charakteristiky modulu a fáze vstupní impedance (Úkol 3)}
 
-\subsection{Výpočty}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{impedance_uloha8.png}
+    \caption{asdůhfnlasdk}
+\end{figure}
 
-\subsection{Grafy}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{impedance_13dbm_uloha8.png}
+    \caption{asdůhfnlasdk}
+\end{figure}
+
+\subsection{Měření vlivu výchylky indikátoru na proudový odběr z napájecího zdroje (Úkol 4)}
+
+\subsubsection{Tabulky}
+
+\begin{table}[H]
+    \catcode`\-=12
+    \centering
+    \caption{Hodnoty vstupních sinusových napětí odpovídající rozsvícení jednotlivých LED}
+    \begin{tabular}{ll|cccccccccc}
+        \toprule
+        LED & [-]              & 1     & 2     & 3     & 4     & 5     & 6     & 7     & 8     & 9     & 10    \\
+        \cmidrule(rl){1-12}
+        $I_{V_{\text{CC}}}$ & {[}A{]} & 0,011 & 0,017 & 0,024 & 0,030 & 0,036 & 0,042 & 0,048 & 0,054 & 0,060 & 0,065 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsubsection{Grafy}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{grafy/graf3.pdf}
+    \caption{asdffasdfasd}
+\end{figure}
+
+\subsection{Měření rychlosti odezvy měřiče (Úkol 5)}
+
+\subsubsection{Tabulky}
+
+\begin{table}[H]
+    \centering
+    \caption{dsalkjfhldks}
+    \begin{tabular}{lr}
+        \toprule
+        Doba zhasnutí jedné LED & 13,2\,ms \\
+        Doba zhasnutí všech LED & 121\,ms \\
+        Doba rozsvícení LED & 194\,$\mu$s \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{osciloskop_uloha8.png}
+    \caption{asdůhfnlasdk}
+\end{figure}
 
 \section{Závěr}
 

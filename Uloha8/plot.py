@@ -16,7 +16,7 @@ for f_index, f in enumerate(f_mer):
     # print(f_index, f)
     U_vst = import_data_column("uloha8_2.xlsx", "Sheet1", 5, 3 + f_index, 10)
 
-    plt.plot(LED_n, U_vst, label=f, marker="x", markersize="15", markeredgewidth=2)
+    plt.plot(LED_n, U_vst, label=f, marker="x", markersize="10", markeredgewidth=2)
 
 plt.legend()
 plt.xticks(np.arange(0, 11, 1))
@@ -39,7 +39,7 @@ for LED in LED_n:
     # print(f_index, f)
     U_vst = import_data_column("uloha8_2.xlsx", "Sheet1", 34, 3 + int(LED), 5)
 
-    color = plt.plot(f_mer_n, U_vst, label= "LED " + str(int(LED)), marker="x", markersize="15", markeredgewidth=2)
+    color = plt.plot(f_mer_n, U_vst, label= "LED " + str(int(LED)), marker="x", markersize="10", markeredgewidth=2)
     plt.text(150, U_vst[1], "LED " + str(int(LED)), ha="center", va="bottom", color=plt.gca().lines[-1].get_color())
 
 plt.xscale("log")
@@ -50,5 +50,23 @@ plt.ylabel("$U_{měř}$ [V]")
 plt.title("Závislost napětí rozsvícení jednotlivých LED na frekvenci vstupního signálu")
 
 plt.savefig("grafy/graf2.pdf", format="pdf", bbox_inches="tight")
+
+################################################################################
+# Závislost vlivu výchylky indikátoru na proudový odběr z napájecího zdroje
+################################################################################
+
+plt.figure(3, figsize=(11.69, 8.27))
+
+I_Vcc = import_data_column("uloha8_2.xlsx", "Sheet1", 5, 8, 10)
+
+plt.plot(LED_n, I_Vcc, marker="+", markersize="15", markeredgewidth=2, color="tab:red")
+
+plt.xticks(np.arange(0, 11, 1))
+plt.grid(True)
+plt.xlabel("$LED$ [-]")
+plt.ylabel("$I_{V_{CC}}$ [A]")
+plt.title("Závislost proudového odběru na výchylce indikátoru")
+
+plt.savefig("grafy/graf3.pdf", format="pdf", bbox_inches="tight")
 
 plt.show()
