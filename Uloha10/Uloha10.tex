@@ -47,6 +47,8 @@ Zesílení koncových stupňů je dáno rezistory R$_6$ až R$_9$.
     \caption{Schéma zapojení modulu KMJ2005SX}
 \end{figure}
 
+\pagebreak
+
 \section{Úkoly měření}
 
 \begin{enumerate}
@@ -68,13 +70,62 @@ Zesílení koncových stupňů je dáno rezistory R$_6$ až R$_9$.
     \item Poloautomatický zkresloměr Tesla BM 543
 \end{itemize}
 
+\pagebreak
+
 \section{Zpracování úkolů}
 
 \subsection{Měření vstupního sinusového napětí (Úkol 1)}
 
+V tomto úkolu jsme měřili efektivní hodnotu vstupního sinusového napětí signálu o kmitočtu
+1\,kHz , kdy je na výstupu zesilovače výkon 4\,W a 8\,W do zátěže 8\,$\Omega$.
+Pro toto měŘená byl použit signálový generátor a osciloskop spolu s diferenční sondou.
 
+Výstup signálového generátoru byl připojen na vstup měřeného koncového zesilovače.
+Na výstupu zesilovače byl umístěn výkonový rezistor s elektrickým odporem o hodnotě 8\,$\Omega$.
+Napětí na tomto rezistoru bylo měřeno pomocí osciloskopu.
+K měření byla použita diferenční sonda, která byla ke kanálu osciloskopu připojena
+přes BNC T rozbočku vybavenou 50\,$\Omega$ odporem.
+
+Naměřená napĚtí jsou uvedeny v tabulce níže:
+
+\begin{table}[H]
+    \catcode`\-=12
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        Výkon na výstupu & Vypočtené výstupní napětí & Naměřené vstupní napětí \\
+        \cmidrule(rl){1-1}
+        \cmidrule(rl){2-2}
+        \cmidrule(rl){3-3}
+        W                & V$_\text{RMS}$             & mV$_\text{RMS}$        \\
+        \midrule
+        4                & 5,66                       & 19,48                  \\
+        8                & 8                          & 28,07                  \\
+        \bottomrule
+    \end{tabular}
+    \caption{Naměřená vstupní napětí}
+\end{table}
+
+Výpočet efektivní hodnoty napětí odpovídající výkonu 8\,W:
+
+\begin{equation*}
+    \textcolor{teal}{P = \frac{U^2}{R}} \Rightarrow U = \sqrt{P \cdot R} = \sqrt{4\,\text{W} \cdot 8\,\Omega} = \underline{\underline{5,66\,\text{V}}}
+\end{equation*}
+
+Výpočet pro hodnotu 4\,W:
+
+\begin{equation*}
+    U = \sqrt{8\,\text{W} \cdot 8\,\Omega} = \underline{\underline{8\,\text{V}}}
+\end{equation*}
 
 \subsection{Měření frekvenční charakteristiky modulu a fáze přenosu (Úkol 2)}
+
+Předmětem tohoto úkolu bylo měření frekvenční charakteristiky modulu a fáze přenosu zesilovače
+pomocí obvodového analyzátoru Bode 100.
+
+Přípravek byl připojen k analyzátoru Bode 100 v doporučeném zapojení pro měření přenosu
+t.j. jako dvojbrána.
+Měření bylo provedeno automaticky počítačem, výsledná charakteristika je uvedena níže.
 
 \begin{figure}[H]
     \centering
@@ -82,7 +133,22 @@ Zesílení koncových stupňů je dáno rezistory R$_6$ až R$_9$.
     \caption{Naměřené frekvenční charakteristiky modulu a fáze přenosu}
 \end{figure}
 
+V této frekvenční charakteristice modulu a fáze pozorujeme, že přenos dosahuje maximální hodnoty
+kolem cca. 48\,dB.
+Také pozorujeme, že na začátku a na konci charakteristiky dochází k omezení přenosu.
+
+Pozorované omezení na začátku je pravděpodobně způsobeno filtrem horní propusti,
+který je v zesilovači tvořen kondenzátorem C$_3$ a vstupním odporem zesilovače.
+K omezení na konci charakteristiky nejspíše dochází vlivem hornopropustního filtru v zesilovači.
+
 \subsection{Měření frekvenční charakteristiky modulu a fáze vstupní impedance (Úkol 3)}
+
+Předmětem tohoto úkolu bylo měření frekvenční charakteristiky modulu a fáze impedance zesilovače
+pomocí obvodového analyzátoru Bode 100.
+
+Přípravek byl připojen k analyzátoru Bode 100 v doporučeném zapojení pro měření přenosu
+t.j. jako jednobrána.
+Měření bylo provedeno automaticky počítačem, výsledná charakteristika je uvedena níže.
 
 \begin{figure}[H]
     \centering
@@ -90,10 +156,40 @@ Zesílení koncových stupňů je dáno rezistory R$_6$ až R$_9$.
     \caption{Naměřené frekvenční charakteristiky modulu a fáze vstupní impedance}
 \end{figure}
 
+Pozorujeme, že naměřená charakteristika je zatížená velkým šumem.
+To je způsobeno vnitřní impedancí obvodového analyzátoru Bode 100, která má hodnotu
+50\,$\Omega$.
+Tato vnitřní impedance není vhodná k měření obvodových impedancí vyšších hodnot
+(v řádu kilohmů) jako v našem případě.
+
+Impedanci nejsme tedy schopni odečíst s jistotou a přesně, můžeme ji jen orientačně odhadnout
+na hodnotu v rozmezí cca. 40 až 50\,k$\Omega$.
+
 \subsection{Měření účinnosti zesilovače (Úkol 4)}
 
 \subsection{Měření harmonického zkreslení na výstupu (Úkol 5)}
 
 \section{Závěr}
+
+Předmětem této laboratorní úlohy bylo provedení několik měření vlastností modulu integrovaného
+koncového audio zesilovače s výkonem 20\,W modelu KMJ2005SX. Pro všechna měření byla použita
+diferenční sonda.
+
+Nejprve jsme se věnovali měření velikosti hodnoty vstupního sinusového napětí.
+Naměřené a vyočtené hodnoty je možné si prohlédnout v přehledné tabulce uvedené v
+úvodu tohoto protokolu.
+
+Našim následujícím úkolem bylo měření frekvenčních charakteristik modulu a fáze přenosu
+pomocí obvodového analyzátoru Bode 100. Výsledkem tohoto měření byla grafická charakteristika
+uvedena výše. Pozorovali jsme, že se zesilovač chová jako pásmová propust.
+
+Dále jsme se věnovali měření frekvenční charakteristiky modulu a fáze přenosu.
+Výstupem tohoto měření byla opět grafická charakteristika, avšak ta byla kvůli elektrickým
+vlastnostem použitého analyzátoru zatížena velmi vysokým šumem a proto bylo přesné
+odečtení hodnoty impedance obvodu velmi obtížné. Impedance byla tedy odečtena jen velice přibližně.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOPLNIT ZÁVĚR PRO POSLEDNÍ DVĚ ÚLOHY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
